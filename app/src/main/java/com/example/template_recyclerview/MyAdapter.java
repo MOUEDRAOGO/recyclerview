@@ -3,15 +3,13 @@ package com.example.template_recyclerview;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 //4-gestion de l'ensemble du contenu'
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     List<MyObject> list;
 
     //ajouter un constructeur prenant en entrée une liste

@@ -4,9 +4,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 public class MyViewHolder extends RecyclerView.ViewHolder {
+    private View itemViewVariable;
+
 
     private ImageView backgroundImageUrlView;
     private ImageView sharingLogoUrlView;
@@ -16,8 +21,12 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     private TextView articleDateView;
 
     //itemView est la vue correspondante à 1 cellule
-    public MyViewHolder(View itemView) {
+    public MyViewHolder(final View itemView) {
         super(itemView);
+
+        itemViewVariable = itemView;
+
+
 
         //c'est ici que l'on fait nos findView
 
@@ -32,25 +41,24 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     //puis ajouter une fonction pour remplir la cellule en fonction d'un MyObject
     public void bind(MyObject myObject) {
 
-        Picasso.with(backgroundImageUrlView.getContext()).load(myObject.backgroundImageUrl()).centerCrop().fit().into(backgroundImageUrlView);
-        Picasso.with(sharingLogoUrlView.getContext()).load(myObject.sharingLogoUrl()).centerCrop().fit().into(sharingLogoUrlView);
+        Picasso.get().load(myObject.getBackgroundImageUrl()).centerCrop().fit().into(backgroundImageUrlView);
+        Picasso.get().load(myObject.getSharingLogoUrl()).centerCrop().fit().into(sharingLogoUrlView);
         newspaperTitleView.setText(myObject.getNewspaperTitle());
         articleShortTextView.setText(myObject.getArticleShortText());
         articleAuthorView.setText(myObject.getArticleAuthor());
         articleDateView.setText(myObject.getArticleDate());
+
+        itemViewVariable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(itemViewVariable.getContext())
+                        .setTitle("popup")
+                        .show();
+            }
+        });
     }
 
-    itemView.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            new AlertDialog.Builder(itemView.getContext())
-                    .setBackgroundImageUrl(String backgroundImageUrl)
-                    .setSharingLogoUrl(String sharingLogoUrl)
-                    .setNewspaperTitle(String newspaperTitle)
-                    .setArticleShortText(String articleShortText)
-                    .setArticleAuthor(String articleAuthor)
-                    .setArticleDate(String articleDate)
-                    .show();
-        }
-    });
+
+
+
 }

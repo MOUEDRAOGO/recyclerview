@@ -8,6 +8,15 @@ public class MyObject {
     private String articleAuthor;
     private String articleDate;
 
+    public MyObject(String backgroundImageUrl, String sharingLogoUrl, String newspaperTitle, String articleShortText, String articleAuthor, String articleDate ) {
+        this.backgroundImageUrl = backgroundImageUrl;
+        this.sharingLogoUrl = sharingLogoUrl;
+        this.newspaperTitle = newspaperTitle;
+        this.articleShortText = articleShortText;
+        this.articleAuthor = articleAuthor;
+        this.articleDate = articleDate;
+    }
+
     public String getBackgroundImageUrl() {
         return backgroundImageUrl;
     }
@@ -57,14 +66,7 @@ public class MyObject {
     }
 
 
-    public MyObject(String backgroundImageUrl, String sharingLogoUrl, String newspaperTitle, String articleShortText, String articleAuthor, String articleDate ) {
-        this.backgroundImageUrl = backgroundImageUrl;
-        this.sharingLogoUrl = sharingLogoUrl;
-        this.newspaperTitle = newspaperTitle;
-        this.articleShortText = articleShortText;
-        this.articleAuthor = articleAuthor;
-        this.articleDate = articleDate;
-    }
+
 
 
 }

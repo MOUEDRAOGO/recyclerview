@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    private List<MyObject> cities = new ArrayList<>();
+    private List<MyObject> articles = new ArrayList<>();
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         ajouterArticles();
 
         //1-recuperation de la vue
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewId);
 
         //2-définit le positionnenement des view, l'agencement des cellules, ici de façon verticale, comme une ListView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -47,20 +47,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(new MyAdapter(articles));
         //FIN GESTION DU RECYCLERVIEW
 
-        private Object findViewById ( int recyclerView){
-        }
-
-        private void ajouterArticles () {
-            articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", newspaperTitle:
-            "titre article", articleShortText:
-            "lorem ipsum cncsnll cskkcc cfhjjiuhjozhcsohiouc dcfzojoidjzcoi", articleAuthor:
-            "author", articleDate:"231220" ));
-
-        }
-
-
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+    }
+
+    private void ajouterArticles () {
+        articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
+                "short text article", "auteur", "date"));
 
     }
 
