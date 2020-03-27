@@ -8,7 +8,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="page2"
+            android:text="page n°2"
             android:textSize="45dp"
             android:gravity="center"
             android:textColor="#ff0000"/>

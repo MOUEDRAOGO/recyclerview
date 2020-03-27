@@ -1,13 +1,20 @@
 package com.example.template_recyclerview;
 
-//public class page2 {
-    //protected void onCreate(Bundle savedInstanceState) {
-        //super.onCreate(savedInstanceState);
-        //setContentView(R.layout.page2);}
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 
-        //public Void page1 (View view) {
-        //startActivity(new Intent(this, page2.class));
-        //}
+import androidx.appcompat.app.AppCompatActivity;
+
+public class page2 extends AppCompatActivity {
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.page2);}
+
+        public Void page1 (View view) {
+        startActivity(new Intent(this, page2.class));
+        }
 
 
-//}
+}
