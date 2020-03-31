@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         //GESTION DU RECYCLERVIEW
 
-        //remplir les informations
+        //methode pour remplir les informations
         ajouterArticles();
 
         //1-recuperation de la vue
@@ -44,15 +44,32 @@ public class MainActivity extends AppCompatActivity {
 
         //3-gestion du contenu puis créer un MyAdapter, lui fournir notre liste de villes.
         //cet adapter servira à remplir notre recyclerview
-        recyclerView.setAdapter(new MyAdapter(articles));
+        recyclerView.setAdapter(new MyAdapter(articles, this));
         //FIN GESTION DU RECYCLERVIEW
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
     }
 
     private void ajouterArticles () {
+        articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
+                "short text article", "auteur", "date"));
+        articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
+                "short text article", "auteur", "date"));
+        articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
+                "short text article", "auteur", "date"));
+        articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
+                "short text article", "auteur", "date"));
+        articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
+                "short text article", "auteur", "date"));
+        articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
+                "short text article", "auteur", "date"));
+        articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
+                "short text article", "auteur", "date"));
+        articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
+                "short text article", "auteur", "date"));
         articles.add(new MyObject("France", "http://www.telegraph.co.uk/travel/destination/article130148.ece/ALTERNATES/w620/parisguidetower.jpg", "titre1",
                 "short text article", "auteur", "date"));
 

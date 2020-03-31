@@ -10,8 +10,7 @@
     android:layout_marginRight="8dp"
     app:cardBackgroundColor="@android:color/holo_green_light"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
-    android:onClick="page1">
+    app:cardElevation="4dp">
 
 
 

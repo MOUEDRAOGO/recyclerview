@@ -1,20 +1,22 @@
+
+
 package com.example.template_recyclerview;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class page2 extends AppCompatActivity {
+public class page2 extends AppCompatActivity  {
+
+    public static final String MY_OBJECT_ARTICLES = "myObjectArticles";
+    private MyObject selectedObject;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page2);}
+        setContentView(R.layout.page2);
 
-        public Void page1 (View view) {
-        startActivity(new Intent(this, page2.class));
-        }
-
+        //selectedMyObject = getActivity().getIntent().getParcelableExtra(MYOBJECT); // Parcelable
+        selectedObject = getIntent().getParcelableExtra(MY_OBJECT_ARTICLES); // Parcelable ; getintent = recuperation des donnees
+    }
 
 }
