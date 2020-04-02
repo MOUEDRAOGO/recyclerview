@@ -8,14 +8,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-
 public class MyViewHolder extends RecyclerView.ViewHolder {
     private View itemViewVariable;
 
 
-    private ImageView backgroundImageUrlView;
-    private ImageView sharingLogoUrlView;
+    private ImageView backgroundImageView;
+    private ImageView sharingLogoView;
     private TextView newspaperTitleView;
     private TextView articleShortTextView;
     private TextView articleAuthorView;
@@ -33,8 +31,8 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
         //c'est ici que l'on fait nos findView
 
-        backgroundImageUrlView = (ImageView) itemView.findViewById(R.id.backgroundImageUrl);
-        sharingLogoUrlView = (ImageView) itemView.findViewById(R.id.sharingLogoUrl);
+        backgroundImageView = (ImageView) itemView.findViewById(R.id.backgroundImage);
+        sharingLogoView = (ImageView) itemView.findViewById(R.id.sharingLogo);
         newspaperTitleView = (TextView) itemView.findViewById(R.id.newspaperTitle);
         articleShortTextView = (TextView) itemView.findViewById(R.id.articleShortText);
         articleAuthorView = (TextView) itemView.findViewById(R.id.articleAuthor);
@@ -44,8 +42,10 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     //puis ajouter une fonction pour remplir la cellule en fonction d'un MyObject
     public void bind(final MyObject myObject) {
 
-        Picasso.get().load(myObject.getBackgroundImageUrl()).centerCrop().fit().into(backgroundImageUrlView);
-        Picasso.get().load(myObject.getSharingLogoUrl()).centerCrop().fit().into(sharingLogoUrlView);
+
+        //Picasso.get().load(myObject.getSharingLogoUrl()).centerCrop().fit().into(sharingLogoView);
+        backgroundImageView.setImageDrawable(context.getDrawable(R.drawable.tribune));
+        //sharingLogoView.setImageDrawable(context.getDrawable(R.drawable.));
         newspaperTitleView.setText(myObject.getNewspaperTitle());
         articleShortTextView.setText(myObject.getArticleShortText());
         articleAuthorView.setText(myObject.getArticleAuthor());
@@ -62,9 +62,10 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 //MyObject myObject = new MyObject();
 
                 Intent intent = new Intent(context, page2.class); //donnees de destination
-                //intent.putExtra("page2", page2);
+
                 intent.putExtra(page2.MY_OBJECT_ARTICLES, myObject); //donnees a passer
-                        //comment passer d une vue a une autre pour passer les donnees getIntent
+
+                //comment passer d une vue a une autre pour passer les donnees getIntent
                 context.startActivity(intent);// demarrage de l'activité suivante
 
             }

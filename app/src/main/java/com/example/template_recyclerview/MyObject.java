@@ -4,16 +4,16 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class MyObject implements Parcelable {
-    private String backgroundImageUrl;
-    private String sharingLogoUrl;
+    private String backgroundImage;
+    private String sharingLogo;
     private String newspaperTitle;
     private String articleShortText;
     private String articleAuthor;
     private String articleDate;
 
-    public MyObject(String backgroundImageUrl, String sharingLogoUrl, String newspaperTitle, String articleShortText, String articleAuthor, String articleDate) {
-        this.backgroundImageUrl = backgroundImageUrl;
-        this.sharingLogoUrl = sharingLogoUrl;
+    public MyObject(String backgroundImage, String sharingLogoUrl, String newspaperTitle, String articleShortText, String articleAuthor, String articleDate) {
+        this.backgroundImage = backgroundImage;
+        this.sharingLogo = sharingLogoUrl;
         this.newspaperTitle = newspaperTitle;
         this.articleShortText = articleShortText;
         this.articleAuthor = articleAuthor;
@@ -28,8 +28,8 @@ public class MyObject implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(backgroundImageUrl);
-        dest.writeString(sharingLogoUrl);
+        dest.writeString(backgroundImage);
+        dest.writeString(sharingLogo);
         dest.writeString(newspaperTitle);
         dest.writeString(articleShortText);
         dest.writeString(articleAuthor);
@@ -37,8 +37,8 @@ public class MyObject implements Parcelable {
     }
 
     protected MyObject(Parcel in) {
-        backgroundImageUrl = in.readString();
-        sharingLogoUrl = in.readString();
+        backgroundImage = in.readString();
+        sharingLogo = in.readString();
         newspaperTitle = in.readString();
         articleShortText = in.readString();
         articleAuthor = in.readString();
@@ -58,20 +58,20 @@ public class MyObject implements Parcelable {
     };
     //FIN GESTION DU PARCELABLE
 
-    public String getBackgroundImageUrl() {
-        return backgroundImageUrl;
+    public String getBackgroundImage() {
+        return backgroundImage;
     }
 
-    public void setBackgroundImageUrl(String backgroundImageUrl) {
-        this.backgroundImageUrl = backgroundImageUrl;
+    public void setBackgroundImage(String backgroundImage) {
+        this.backgroundImage = backgroundImage;
     }
 
-    public String getSharingLogoUrl() {
-        return sharingLogoUrl;
+    public String getSharingLogo() {
+        return sharingLogo;
     }
 
-    public void setSharingLogoUrl(String sharingLogoUrl) {
-        this.sharingLogoUrl = sharingLogoUrl;
+    public void setSharingLogo(String sharingLogo) {
+        this.sharingLogo = sharingLogo;
     }
 
     public String getNewspaperTitle() {

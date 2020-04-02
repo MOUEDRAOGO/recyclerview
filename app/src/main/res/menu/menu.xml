@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    //never = Si vous définissez le showAsAction à never, l’item sera affiché dans l’overflow (les 3 petits points qui indiquent que des actions sont disponibles)
+    //ifRoom = item sera affiché directement dans l’ActionBar, en tant que « bouton clickable ».
     <item
         android:id="@+id/action_share"
         app:showAsAction="ifRoom"

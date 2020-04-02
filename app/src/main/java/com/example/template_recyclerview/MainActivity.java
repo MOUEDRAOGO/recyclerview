@@ -1,5 +1,6 @@
 package com.example.template_recyclerview;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -86,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void share() {
         Toast.makeText(this, R.string.action_share, Toast.LENGTH_LONG).show();
+
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT,"Android Development Tutorials");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "www.technxt.net");
+        shareIntent.setType("text/plain");
+        startActivity(shareIntent);
     }
 
     //gère le click sur une action de l'ActionBar
@@ -95,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_share:
                 share();
                 return true;
+            //case R.id.action_settings:
+                //return true;
         }
         return super.onOptionsItemSelected(item);
     }
