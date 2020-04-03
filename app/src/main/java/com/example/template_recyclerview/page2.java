@@ -30,9 +30,7 @@ public class page2 extends AppCompatActivity  {
         //remplissage de la vue selectionnee avec la bonne data provenant de l'objet
         page2TitleView.setText(selectedObject.getNewspaperTitle());
 
-        page2ImageView = (TextView) findViewById(R.id.page2Image);
-        //page2ImageView.setImageDrawable(selectedObject.getBackgroundImage());
-        page2ImageView.setImageDrawable();
+        page2ImageView = (ImageView) findViewById(R.id.page2Image);
 
         Page2TextContentView = (TextView) findViewById(R.id.Page2TextContent);
         Page2TextContentView.setText(selectedObject.getArticleShortText());
