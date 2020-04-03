@@ -31,6 +31,7 @@ public class page2 extends AppCompatActivity  {
         page2TitleView.setText(selectedObject.getNewspaperTitle());
 
         page2ImageView = (ImageView) findViewById(R.id.page2Image);
+        page2ImageView.setImageDrawable(selectedObject.getBackgroundImage());
 
         Page2TextContentView = (TextView) findViewById(R.id.Page2TextContent);
         Page2TextContentView.setText(selectedObject.getArticleShortText());
